@@ -18,14 +18,13 @@ and what you should write is the sayHi function that makes the code above work,
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay); //should alert ('Hi Katie')'
    });
-    
-    
 */
 
+  //Code Here for first  
 
-
-  //Code Here for first
-  
+var first = function(names, func) {
+    return func(names[0]);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -35,11 +34,11 @@ first(names, function(firstName){
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
-
-
-
   //Code Here for last
+
+var last = function(names, func) {
+  return func(names[names.length-1]);
+}
 
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -50,13 +49,11 @@ last(names, function(lastName){
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
-
-
-
-
-
   //Code Here for multiply
+
+var multiply = function(numA, numB, func) {
+  return func(numA * numB);
+}
 
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -67,12 +64,16 @@ multiply(4, 3, function(answer){
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
-
-
-
-
   //Code Here for contains
+
+var contains = function(nameArr, nameToFind, func) {
+  if(nameArr.indexOf(nameToFind) >= 0) {
+    return func(true);
+  } else {
+    return func(false);
+  }
+}
+
 
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -83,14 +84,7 @@ contains(names, 'Colt', function(result){
 });
 
 
-
-
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
-
-
-
     //Code Here for uniq
 
 uniq(names, function(uniqArr){
