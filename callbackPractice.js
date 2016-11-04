@@ -32,9 +32,9 @@ first(names, function(firstName){
 });
 
 
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
   //Code Here for last
+
 
 var last = function(names, func) {
   return func(names[names.length-1]);
@@ -45,11 +45,9 @@ last(names, function(lastName){
 });
 
 
-
-
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
   //Code Here for multiply
+
 
 var multiply = function(numA, numB, func) {
   return func(numA * numB);
@@ -60,11 +58,9 @@ multiply(4, 3, function(answer){
 })
 
 
-
-
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
   //Code Here for contains
+
 
 var contains = function(nameArr, nameToFind, func) {
   if(nameArr.indexOf(nameToFind) >= 0) {
@@ -87,6 +83,7 @@ contains(names, 'Colt', function(result){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
     //Code Here for uniq
 
+
 var uniq = function(nameArr, func) {
     newArray = [];
     for(var i = 0; i < nameArr.length; i++) {
@@ -101,27 +98,23 @@ uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 
+
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
-
-
-
     //Code Here for each
+
+
+var each = function(nameArr, func) {
+  for (var i = 0; i < nameArr.length; i++) {
+    func(nameArr[i], i);
+  }
+}
 
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
 
 
-
-
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
-
-
-
-
  //code here for getUserById
 
 var users = [
@@ -145,6 +138,14 @@ var users = [
   },
 ];
 
-getUserById(users, '16t', function(user){
+var getUserById = function(userArray, userId, func) {
+  for(var i = 0; i < userArray.length; i++) {
+    if(userArray[i].id === userId) {
+      return func(userArray[i]);
+    }
+  }
+}
+
+getUserById(users, '16t', function(user) {
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
 });
